@@ -1,0 +1,954 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald',sans-serif;
+    box-sizing: border-box;
+    
+}
+html{
+    scroll-behavior: smooth;
+}
+.hidden{
+    opacity: 0;
+    transition: all 5s;
+    /*filter: blur(5px);
+    transform: translateX(-100%);
+    */
+    
+}
+
+.show{
+    opacity: 1;
+    filter: blur(0);
+    /*transform: translateX(0);
+    */
+}
+@media(prefers-reduced-motion){
+    .hidden{
+        transition: none;
+    }
+}
+/*body{
+    background: #080808;
+    color: #fff;
+}*/
+.hero {
+    width: 100%;
+    height: 750px;
+    background-image: linear-gradient(rgba(12,3,51,0.3),
+    rgba(12,3,51,0.3));
+    /*background-color: black;*/
+    position: relative;
+    padding: 0 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/**************************Nav Bar Starting from here***************************/
+nav { 
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    /* Below is a new navbar design
+    width: 524px;
+    position: relative;
+    height: 50px;
+    background: #262626;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    */
+    left: 0;
+    padding: 20px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    z-index: 100000;
+}
+/*
+nav  ul li a{
+    position: relative;
+    display: inline-block;
+    font-size: 1em;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    padding: 0 23px;
+    z-index: 1;
+
+}
+
+nav span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 95px;
+    height: 100%;
+    background: linear-gradient(45deg,#4f1919,#ff3333);
+    border-radius: 8px;
+    transition: 0.5s;
+}
+nav ul li a:nth-child(1):hover~span{
+    left: 0;
+
+}
+nav ul li a:nth-child(2):hover~span{
+    left: 95px;
+    
+}
+nav ul li a:nth-child(3):hover~span{
+    left: 189px;
+    width: 110px;
+}
+nav ul li a:nth-child(4):hover~span{
+    left: 289px;
+    width: 115px;
+    
+} **************************************Above commented CSS has new navbar design *************/
+nav .logo {
+    width: 250px;
+}
+nav ul li:hover .academy-dropdown{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    
+    
+}
+nav ul li:hover .department-dropdown{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+       
+}
+
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    margin-left: 40px;
+    position: relative;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 17px;
+}
+nav ul li a i {
+    margin-left: 4px;
+}
+nav ul li a:hover{
+    color: #e31720;
+    transition: 0.3s ease;
+   }
+
+.department-dropdown{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #e31720;
+}
+.department-dropdown{
+    display: none;
+}
+.department-dropdown ul{
+    display: block;
+    margin:0;
+}
+.department-dropdown ul li{
+    width: 150px;
+    padding: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    text-align: center;
+}
+.academy-dropdown{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #e31720;
+}
+.academy-dropdown{
+    display: none;
+}
+.academy-dropdown ul{
+    display: block;
+    margin:0;
+    width: 215px;
+    
+}
+.academy-dropdown ul li{
+    width: 200px;
+    padding: 10px;
+    margin-left: 5px;
+    text-align: center;
+}
+.background-video{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin-top: 90px;  
+}
+.content{
+    text-align: center;
+}
+.content h1{
+    font-size: 65px;
+    color: #fff;
+    font-weight: 550;
+    
+}
+.content h1:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    transition: 0.5s;
+}
+.content h2{
+    font-size: 50px;
+    color: #fff;
+    font-weight: 400;
+}
+.content h2:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    transition: 0.5s;
+}
+.content h3{
+    font-size: 30px;
+    color: #fff;
+    font-weight: 300;
+}
+.content h3:hover{
+    -webkit-text-stroke: 1px #fff;
+    color: transparent;
+    transition: 0.5s;
+}
+@media(max-aspect-ratio:16/9){
+    .background-video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/************************** Now Starting Vision Mission Part of Website **************************/
+#vision-mission-commitment{
+    padding: 20px 0 ;
+    background-color: black;
+}
+#vision-mission-commitment h1{
+    position: relative;
+    font-size: 30px;
+    color: black;
+    -webkit-text-stroke: 0.1vw #e31720;
+    text-transform: uppercase;
+}
+#vision-mission-commitment h1::before{
+    content: attr(data-text);
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    color: #e31720;
+    -webkit-text-stroke: 0vw black;
+    border-right: 2px solid #e31720;
+    overflow: hidden;
+    animation: animate 8s linear infinite;
+}
+@keyframes animate {
+    0%,10%,100%
+    {
+        width: 0;
+    }
+    70%,90%
+    {
+        width: 100%;
+    }
+}
+.vision-mission-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap: 40px;
+    margin-top:50px;
+    margin-bottom: 0;
+    margin-left: 50px;
+    margin-right: 50px;
+    justify-content: space-between;
+    text-align: center;
+    color: #fff;
+}
+#vision-mission-commitment h1{
+    color: #fff;
+    font-size: 40px;
+    font-weight: 500;  
+    margin-top: 40px;
+    margin-bottom: 0px;
+    text-align: center;
+}
+.vision-mission-container h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.vision-mission-container p{
+    font-size: 18px;
+}
+.vision-mission-container div{
+    background: #262626;
+    padding: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    border-radius: 15px;
+    transition: background 0.5s,transform 0.5s;
+}
+.vision-mission-container div i{
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.vision-mission-container div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.vision-mission-container div:hover{
+    background: #e31720;
+    transform: translateY(-10px);
+
+}
+/***************************************GM and DGM Messege************************************/
+#gm-message {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    padding: 30px;
+    flex-direction: row;
+}
+#gm-message .hidden{
+    display: flex;
+    flex-direction: row;
+    gap: 55px;
+
+}
+#gm-message .card{
+    display: flex;
+    /*flex: 0 0 100%;*/
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    border-radius: 10px;
+    background: #fff;
+    
+}   
+.card .image{
+    height: 150px;
+    width: 150px;
+    padding: 4px;
+    background: #ababab;
+    border-radius: 50%;
+
+}
+.image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #fff;
+
+}
+.card h2{
+    margin-top: 25px;
+    color: #333;
+    font-size: 22px;
+    font-weight: 600;
+
+}
+.card p{
+    margin-top: 4px;
+    font-size: 18px;
+    font-weight: 400;
+    color: #333;
+    text-align: center;
+}
+/***************************************Organization**************************************************/
+.organization-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+
+}
+
+.organization-video{
+    width: 1100px;
+    border-radius: 10px;
+}
+@media(max-aspect-ratio:16/9){
+    .organization-video{
+        width: 100%;
+        height: auto;
+    }
+}
+.organization-container img{
+    width: 1100px;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 55px;
+    align-items: center;
+    margin-top: 90px;
+    border-radius: 10px;
+}
+
+/************************** Now Starting Planning Department Part of Website **************************/
+#planning-department{
+    /*background: linear-gradient(45deg,blueviolet,lightgreen);*/
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    color: #e31720;
+    padding: 30px;
+}
+#planning-department h1{
+    padding-top: 30px;
+    font-size: 70px;
+}
+.departments-tiles{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+    grid-gap: 40px;
+    margin-top:50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    justify-content: space-between;
+    text-align: center;
+    color: #fff;
+}
+.tile{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.tile img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#e31720);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color:#e31720;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.tile:hover img{
+    transform: scale(1.1);
+}
+.tile:hover .layer{
+    height: 100%;
+}
+/*************************************Now Starting Bluesky******************************/
+
+#bluesky{
+    font-size: 40px;
+    background-color: black;
+    color: #e31720;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+#bluesky h1{
+    padding-bottom: 30px;
+}
+.bluesky-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.bluesky-video{
+    width: 900px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+@media(max-aspect-ratio:16/9){
+    .bluesky-video{
+        width: 100%;
+        height: auto;
+    }
+}
+/*************************************Now Starting Planning Management System******************************/
+
+#planning-management-system{
+    font-size: 35px;
+    background-color: black;
+    color: #e31720;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+#planning-management-system h1{
+    padding-bottom: 30px;
+    margin-bottom: 15px;
+}
+.planning-management-system-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.planning-management-system-video{
+    width: 1100px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+}
+@media(max-aspect-ratio:16/9){
+    .planning-management-system-video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+/*************************************Now Starting SIPOC******************************/
+/*
+#sipoc{
+    font-size: 40px;
+    background-color: black;
+    color: #e31720;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+#sipoc h1{
+    padding-bottom: 30px;
+}
+.sipoc-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.sipoc-container img{
+    width: 1100px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}*/
+/*************************************Now Starting BPM******************************/
+/*
+#bpm{
+    font-size: 40px;
+    background-color: black;
+    color: #e31720;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 30px;
+}
+#bpm h1{
+    padding-bottom: 30px;
+}
+.bpm-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+.bpm-container img{
+    width: 1100px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}*/
+
+/*************************************Now Starting OOBEYA Room************************/
+.oobeya-room{
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    grid-template-rows: minmax(100px,auto);
+    grid-auto-flow: dense;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 0px;
+    background-color: black;    
+}
+#oobeya-room{
+    background-color: black;
+    padding: 0px;
+}
+
+.oobeya-room-heading h1{
+    font-size: 65px;
+    text-align: center;
+    color: #e31720;
+}
+.oobeya-room-box{
+    margin-top: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
+    background: #262626;
+    padding: 20px;
+    display: grid;
+    font-size: 20px;
+    grid-gap: 20px;
+    text-align: center;
+    place-items: center;
+    color: #fff;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+.oobeya-room-box a{
+    
+        text-decoration: none;
+        color: #fff;
+        font-size: 15px;
+        margin-top: 5px;
+        display: inline-block;
+    
+}
+.oobeya-room-box:hover{
+    background: #e31720;
+    transform: translateY(-10px);
+}
+/*************************************Now Startind Planning Manuals*******************/
+.planning-manuals{
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    grid-template-rows: minmax(100px,auto);
+    grid-auto-flow: dense;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+.planning-manuals-heading h1{
+    font-size: 70px;
+    margin-bottom: 0;
+    text-align: center;
+    margin-top: 10px;
+  
+}
+.planning-manuals-box{
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background: #262626;
+    padding: 20px;
+    display: grid;
+    font-size: 20px;
+    grid-gap: 20px;
+    text-align: center;
+    place-items: center;
+    color: #fff;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+
+.planning-manuals-box-content a{
+    
+        text-decoration: none;
+        color: #fff;
+        font-size: 15px;
+        margin-top: 5px;
+        display: inline-block;
+    
+}
+.planning-manuals-box:hover{
+    background: #e31720;
+    transform: translateY(-10px);
+}
+
+/*************************************Now Starting Beacon******************************/
+/*
+#beacon{
+    font-size: 20px;
+    background-color: black;
+    color: #e31720;
+    text-align: center;
+}
+*/
+/*************************************Now Starting Dashboards******************************/
+#power-bi{
+    font-size: 20px;
+    background-color: black;
+    color: #e31720;
+    text-align: center;
+ 
+}
+#power-bi-id-2{
+    background-color: black;
+    height: 800px
+}
+#power-bi h1{
+    font-size: 70px;
+}
+.power-bi-container{
+    
+    position: relative;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+    grid-template-rows: minmax(100px,auto);
+    grid-auto-flow: dense;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-bottom: 40px;
+}
+
+.power-bi-box{
+    margin-top: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background: #262626;
+    padding: 20px;
+    display: grid;
+    font-size: 20px;
+    grid-gap: 20px;
+    text-align: center;
+    place-items: center;
+    color: #fff;
+    transition: 0.5s;
+    border-radius: 10px;
+}
+.power-bi-box:hover{
+    background: #e31720;
+    transform: translateY(-10px);
+}
+.power-bi-box a{
+    
+    text-decoration: none;
+    color: #fff;
+    font-size: 15px;
+    margin-top: 5px;
+    display: inline-block;
+
+}
+
+/*************************************Now Starting Academy******************************/
+/*#academy{
+    font-size: 35px;
+    background-color: black;
+    color: #e31720;
+    text-align: center;
+    height: 800px;
+}*/
+/************************** Now Starting Academy Tiles Part  **************************/
+#academy{
+    /*background: linear-gradient(45deg,blueviolet,lightgreen);*/
+    background-color: black;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    color: #e31720;
+    padding: 30px;
+}
+#academy h1{
+    padding-top: 50px;
+    font-size: 70px;
+}
+.academy-tiles{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(270px,1fr));
+    grid-gap: 40px;
+    margin-top:50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    justify-content: space-between;
+    text-align: center;
+    color: #fff;
+}
+.academy-tile{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.academy-tile img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+
+}
+.academy-layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6),#e31720);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.academy-layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.academy-layer a{
+    margin-top: 20px;
+    color:#e31720;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.academy-tile:hover img{
+    transform: scale(1.1);
+}
+.academy-tile:hover .academy-layer{
+    height: 100%;
+}
+/*************************************Now Starting Contact Us****************************/
+#contact{
+    background-color: black;
+    padding-bottom: 20px;
+}
+.contact-left{
+    flex-basis: 35%;
+    color: #fff;
+    margin-left: 52px;
+    padding-top: 20px;
+}
+/*.contact-right{
+    flex-basis: 35%;
+    color: #fff;
+    margin-right: 0px;
+    padding-top: 160px;
+}*/
+.contact-left{
+    flex-basis: 35%;
+    color: #fff;
+    margin-left: 57px;
+    padding-top: 20px;
+    font-size: 20px;
+}
+.contact-right{
+    flex-basis: 60%; 
+    color: #fff;
+    margin-right: 30px;  
+}
+.contact-left p{
+    margin-top: 10px;
+}
+.contact-left p i{
+    color: #fff;
+    margin-right: 15px;
+    font-size: 20px;
+}
+.contact-left .sub-title{
+    padding-top: 10px;
+}
+.social-icons{
+    margin-top: 15px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #e31720;
+    transform: translateY(-5px);
+}
+.contact-container .row{
+    display: flex;
+    flex-direction: row;
+}
+.btn{
+    display: inline-block;
+    background-color: #e31720;
+    border-radius: 5px;
+    padding: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.contact-right form{
+    width: 100%;
+}
+form input,form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+/****************Copyright****************/
+.copyright{
+    width: 100%;
+    text-align: center;
+    padding: 25px;
+    background: #262626;
+    font-weight: 300;
+    color:white;
+    font-size: 15px;
+}
+/********************************Making Website Responsive for Small Screens***************************/
+/*@media only screen and (max-with:600px);*/
